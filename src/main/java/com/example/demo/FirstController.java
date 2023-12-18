@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 public class FirstController {
     @GetMapping("/")
     public String GetRequest(@RequestParam String apiKey){
-        return "Your apiKey is " + apiKey;
+        return "Your apiKey is " + apiKey + "thank you";
     }
 
     @PostMapping("/json")
