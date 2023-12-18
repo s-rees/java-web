@@ -20,7 +20,7 @@ public class FirstController {
 
     @GetMapping("/home")
     public List<ExampleEntity> GetRequest(){
-        return firstserv.getAll();
+        return firstserve.getAll();
     }
 
     @PostMapping("/json")
