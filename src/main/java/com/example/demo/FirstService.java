@@ -14,9 +14,18 @@ public class FirstService {
         this.firstrepository = firstrepository;
     }
 
-    public List<ExampleEntity> getAll(){
+    public List<ExampleEntity> getAll() {
         return firstrepository.findAll();
     }
 
+    public ExampleEntity saveData(Long Id, String name, Long Age){
+        ExampleEntity data = new ExampleEntity();
+
+        data.setId(Id);
+        data.setAge(Age);
+        data.setName(name);
+
+        return firstrepository.save(data);
+    }
 
 }

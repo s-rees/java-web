@@ -11,13 +11,13 @@ public class FirstModel {
         this.Age = Age;
     }
 
-    public int GetId(){
+    public long GetId(){
         return Id;
     }
     public String GetName(){
         return name;
     }
-    public int GetAge(){
+    public long GetAge(){
         return Age;
     }
 

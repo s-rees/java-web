@@ -1,10 +1,7 @@
 package com.example.demo;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -18,9 +15,16 @@ class DemoApplicationTests {
 
     @Test
     public void testHelloEndpoint() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/"))
+        ResultsActions result = mockMvc.perform(MockMvcRequestBuilders.get("/home"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string("Hello World"));
+                .andExpect(MockMvcResultMatchers.content().contentType("application/json"))
+                .andReturn().getResponse().getContentAsString();
+        assertThat(result).isNotNull();
+        assertThat(result).contains("\"name\":\"John\"");
+        assertThat(result).contains("\"age\":25");
+    }
+
+
     }
 
 }

@@ -1,11 +1,9 @@
 package com.example.demo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name="Person")
 public class ExampleEntity {
 
     @Id
@@ -13,12 +11,6 @@ public class ExampleEntity {
     private Long id;
     private String name;
     private Long Age;
-
-    public ExampleEntity(Long id, String name, Long age) {
-        this.id = id;
-        this.name = name;
-        this.Age = age;
-    }
 
     public Long getId() {
         return id;
