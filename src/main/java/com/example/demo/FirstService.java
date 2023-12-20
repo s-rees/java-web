@@ -27,5 +27,4 @@ public class FirstService {
 
         return firstrepository.save(data);
     }
-
 }
