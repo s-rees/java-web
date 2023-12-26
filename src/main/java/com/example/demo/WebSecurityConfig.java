@@ -24,7 +24,7 @@ public class WebSecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.formLogin(Customizer.withDefaults())
                 .authorizeHttpRequests(req->req
-                        .requestMatchers("/add").permitAll()
+                        .requestMatchers("/home").permitAll()
                         .anyRequest().authenticated())
                 .userDetailsService(userDetailsService).build();
     }
